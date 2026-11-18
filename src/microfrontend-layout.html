@@ -1,23 +1,14 @@
 <single-spa-router base="/" disableWarnings>
   <!--
 
-    This is the single-spa Layout Definition for your microfrontends.
+    Layout Definition — Cumplidos Root MF
     See https://single-spa.js.org/docs/layout-definition/ for more information.
 
   -->
 
   <main id="container">
-    <route path="contratos">
-      <application name="@udistrital/argo-gestion-contractual-mf"></application>
-    </route>
-    <route path="actas">
-      <application
-        name="@udistrital/argo-actas-inicio-mf"
-        props="environment"
-      ></application>
-    </route>
-    <route path="polizas">
-      <application name="@udistrital/argo-poliza-mf"></application>
+    <route path="gestion-contratista">
+      <application name="@udistrital/cumplidos-mf"></application>
     </route>
   </main>
 

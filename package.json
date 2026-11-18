@@ -1,5 +1,5 @@
 {
-  "name": "@udistrital/root-config",
+  "name": "@udistrital/cumplidos-root-config",
   "scripts": {
     "start": "webpack serve --port 4200 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
@@ -52,7 +52,7 @@
     "single-spa": "^6.0.2",
     "single-spa-layout": "^2.2.0"
   },
-  "types": "dist/udistrital-root-config.d.ts",
+  "types": "dist/udistrital-cumplidos-root-config.d.ts",
   "overrides": {
     "uuid": "^11.1.1"
   }

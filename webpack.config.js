@@ -7,7 +7,7 @@ module.exports = (webpackConfigEnv, argv) => {
   const orgName = "udistrital";
   const defaultConfig = singleSpaDefaults({
     orgName,
-    projectName: "root-config",
+    projectName: "cumplidos-root-config",
     webpackConfigEnv,
     argv,
     disableHtmlGeneration: true,

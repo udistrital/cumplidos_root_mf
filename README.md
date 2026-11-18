@@ -1,7 +1,7 @@
-# gestion_contractual_compras_root_mf
+# cumplidos_root_mf
 
-El Root contiene la lógica de Single-SPA del sistema de gestion contractual (Argo) y gestiona todos los microfrontends dentro de la página web, ayuda a gestionar la comunicación entre
-ellos y contiene el consumo de los assets, paleta de colores y favicon del sistema.
+Root Single-SPA para el microfrontend de cumplidos de contratistas (Universidad Distrital).
+Orquesta `@udistrital/cumplidos-mf` y delega autenticación, layout y menú al Core del shell.
 
 ## Especificaciones Técnicas
 
@@ -10,8 +10,7 @@ ellos y contiene el consumo de los assets, paleta de colores y favicon del siste
 - [Single-SPA](https://single-spa.js.org/) 6.0
 - [TypeScript](https://www.typescriptlang.org/) 5.6
 - [Webpack](https://webpack.js.org/) 5.94
-- [Node](https://nodejs.org/es/) 24.x
-- [pnpm](https://pnpm.io/) 12.x
+- [Node](https://nodejs.org/es/) 22.x
 
 ### Variables de Entorno
 
@@ -35,35 +34,35 @@ export const environment = {
       AUTENTICACION_MID: [URL de API MID Autenticación],
     },
     parcels: {
-      "@udistrital/root-config": [URL del bundle del root-config],
+      "@udistrital/cumplidos-root-config": [URL del bundle del root-config],
       "@udistrital/core-mf": [URL del microfrontend core],
-      "@udistrital/argo-gestion-contractual-mf": [URL del microfrontend de gestión contractual],
-      "@udistrital/argo-actas-inicio-mf": [URL del microfrontend de actas de inicio],
-      "@udistrital/argo-poliza-mf": [URL del microfrontend de pólizas],
+      "@udistrital/cumplidos-mf": [URL del microfrontend de cumplidos],
     },
 };
 ```
 
 ### Ejecución del Proyecto
 
-1. clonar el repositorio:
+1. Clonar el repositorio:
    ```shell
-   git clone https://github.com/udistrital/gestion_contractual_compras_root_mf.git
+   git clone https://github.com/udistrital/cumplidos_root_mf.git
    ```
-2. Acceder al directorio del repositorio clonado:
+2. Acceder al directorio:
    ```bash
-   cd gestion_contractual_compras_root_mf
+   cd cumplidos_root_mf
    ```
 3. Instalar las dependencias:
-
    ```bash
-   pnpm install
+   npm install
    ```
-
 4. Iniciar el Root:
    ```bash
-   pnpm start
+   npm start
    ```
+
+El Root expone el microfrontend en `http://localhost:4200`.
+Para registrar `cumplidos_mf` en desarrollo, usar import-map-override:
+`@udistrital/cumplidos-mf → http://localhost:4210/main.js`
 
 ### Ejecución Dockerfile
 
@@ -79,24 +78,24 @@ export const environment = {
 
 ### Ejecución Pruebas
 
-Pruebas unitarias
-
 ```shell
-# Developing
+npm test
 ```
 
 ## Estado CI
 
-```bash
-# Developing
-```
+Pipeline Drone (`cumplidos_root_ci`) configurado en `.drone.yml`:
+
+- Ramas `develop`, `feature/*`, `release/*` → análisis SonarQube
+- Rama `release/*` → build de pruebas + despliegue S3 (`cliente-pruebas`)
+- Rama `master` → build de producción + despliegue S3 (`cliente-prod`)
 
 ## Licencia
 
-This file is part of gestion_contractual_compras_root_mf.
+This file is part of cumplidos_root_mf.
 
-gestion_contractual_compras_root_mf is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+cumplidos_root_mf is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-gestion_contractual_compras_root_mf is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+cumplidos_root_mf is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-You should have received a copy of the GNU General Public License along with gestion_contractual_compras_root_mf. If not, see https://www.gnu.org/licenses/.
+You should have received a copy of the GNU General Public License along with cumplidos_root_mf. If not, see https://www.gnu.org/licenses/.

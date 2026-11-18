@@ -7,8 +7,8 @@
   <meta http-equiv="expires" content="0">
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ARGO</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Cumplidos</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23731514'/%3E%3Cpath d='M8 16.5l5.5 5.5 10.5-10' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
 
   <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
 
@@ -17,7 +17,8 @@
     default-src 'self' https: localhost:* *.portaloas.udistrital.edu.co; 
     script-src 'unsafe-inline' 'unsafe-eval' https: localhost:* *.portaloas.udistrital.edu.co; 
     connect-src https: localhost:* ws://localhost:* *.portaloas.udistrital.edu.co; 
-    style-src 'unsafe-inline' https: *.portaloas.udistrital.edu.co; 
+    style-src 'unsafe-inline' https: *.portaloas.udistrital.edu.co;
+    frame-src 'self' data: blob: https: localhost:* *.portaloas.udistrital.edu.co;
     object-src 'none';">
   <meta name="importmap-type" content="systemjs-importmap" />
 
@@ -70,13 +71,18 @@
   <!-- Main Style -->
   <link rel="stylesheet" href="https://pruebasassets.portaloas.udistrital.edu.co/gaia-style.css">
 
+  <!-- Fuente Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
   <script>
-    System.import('@udistrital/root-config');
+    System.import('@udistrital/cumplidos-root-config');
   </script>
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>

@@ -1,6 +1,6 @@
 {
   "extends": "ts-config-single-spa",
-  "files": ["src/udistrital-root-config.ts"],
+  "files": ["src/udistrital-cumplidos-root-config.ts"],
   "compilerOptions": {
     "declarationDir": "dist",
     "skipLibCheck": true
